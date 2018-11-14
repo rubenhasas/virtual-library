@@ -2,21 +2,24 @@ package com.virtuallibrary.model;
 
 import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToMany;
 import java.util.HashSet;
 import java.util.Set;
 
 @Data
 @Entity
-public class Author {
+public class Author extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @Column(name = "first_name")
     private String firstName;
+
+    @Column(name = "last_name")
     private String lastName;
 
-    @ManyToMany(mappedBy = "authors")
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "authors")
     private Set<Book> books = new HashSet<>();
 
 }
