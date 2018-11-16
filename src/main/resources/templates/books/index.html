@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Books</title>
+</head>
+<body>
+<!--/*@thymesVar id="book" type="com.virtuallibrary.model.Book"*/-->
+<h1 th:text="'List of books'">List of books...</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Publisher</th>
+            <th>ISBN</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="book : ${books}">
+            <th th:text="${book.id}">1</th>
+            <th th:text="${book.title}">Title</th>
+            <th th:text="${book.publisher.name}">Publisher</th>
+            <th th:text="${book.isbn}">ISBN</th>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

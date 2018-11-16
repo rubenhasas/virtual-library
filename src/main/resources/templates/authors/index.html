@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Authors</title>
+</head>
+<body>
+<!--/*@thymesVar id="author" type="com.virtuallibrary.model.Author"*/-->
+<h1 th:text="'List of authors'">List of authors...</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="author : ${authors}">
+            <th th:text="${author.id}">1</th>
+            <th th:text="${author.firstName}">Prenume</th>
+            <th th:text="${author.lastName}">Nume</th>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

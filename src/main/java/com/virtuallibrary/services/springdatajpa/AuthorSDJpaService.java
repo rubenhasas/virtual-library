@@ -2,7 +2,6 @@ package com.virtuallibrary.services.springdatajpa;
 
 import com.virtuallibrary.model.Author;
 import com.virtuallibrary.repositories.AuthorRepository;
-import com.virtuallibrary.repositories.BookRepository;
 import com.virtuallibrary.services.AuthorService;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +13,7 @@ public class AuthorSDJpaService implements AuthorService {
 
     private final AuthorRepository authorRepository;
 
-    public AuthorSDJpaService(AuthorRepository authorRepository, BookRepository bookRepository) {
+    public AuthorSDJpaService(AuthorRepository authorRepository) {
         this.authorRepository = authorRepository;
     }
 
